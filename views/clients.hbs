@@ -1,0 +1,22 @@
+<h2>Клиенты</h2>
+
+{{#if todos.length}}
+<ul>
+  {{#each todos}}
+  <form action="/thisclient" method="POST">
+  
+    <li class="todo">
+        <label>
+            <span>{{name}}</span>
+            <span>{{phone}}</span>
+
+            <input type="hidden" value="{{_id}}" name="id">
+            <button class = "btn btn-small" type="submit">Открыть</button>
+        </label>
+    </li>
+  </form>
+  {{/each}}
+</ul>
+{{else}}
+<p>Нет клиентов</p>
+{{/if}}

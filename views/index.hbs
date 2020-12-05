@@ -1,0 +1,25 @@
+<form action="/dateSwitch" method="POST">
+<h2>Записи на {{strtoday}}</h2><input type="date" name="date" value={{strtoday}}> <button class="btn" type="submit">Посмотреть</button>
+</form>
+{{#if visitsToday.length}}
+<ul>
+  {{#each visitsToday}}
+  <li class="todo">
+    <form action="/thisclient" method="POST">
+  
+    <li class="todo">
+        <label>
+            <span >{{name}}</span>
+            <span >{{phone}}</span>
+            <span >{{time}}</span>
+            <span >{{servise}}</span>
+            <input type="hidden" value="{{_id}}" name="id">
+            <button class = "btn btn-small" type="submit">Открыть</button>
+        </label>
+    </li>
+  </li>
+  {{/each}}
+</ul>
+{{else}}
+<p>Нет записей</p>
+{{/if}}
