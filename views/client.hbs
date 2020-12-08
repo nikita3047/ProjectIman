@@ -1,9 +1,44 @@
-<h2>Клиент</h2>
+<h2>Пациет</h2>
 {{#with client}}
     <div><h5>Имя: {{name}}</h5></div>
     <div><h5>Телефон:{{phone}}</h5></div>
+     <form action="/rating" method="POST">
+      <div class="row">
+          <input type="hidden" value="{{_id}}" name="id">
+      <label class="col s4 m3">
+        <input class="with-gap" name="rating" type="radio" value="1" {{#if ratingG}}checked{{/if}} />
+        <span>Хороший</span>
+      </label>
+      <label class="col s4 m3">
+        <input class="with-gap" name="rating" type="radio" value="2" {{#if ratingB}}checked{{/if}}/>
+        <span>Опаздывает</span>
+      </label>
+      <label class="col s4 m3">
+        <input class="with-gap" name="rating" type="radio" value="3" {{#if ratingVB}}checked{{/if}}/>
+        <span>Не явился</span>
+      </label>
+      <button class="btn btn-small col s12 m3" type="submit">Изменить</button>
+      </div>
+  </form>
+    <div><h5>Карта пациента:</h5></h5></div>
+    <div class="row">
+        <form class = "col s12" action="/mapClient" method="POST">
+            <div class="row">
+                <div class="input-field col s12">
+                
+                    <input type="hidden" value="{{_id}}" name="id">
+                    <textarea id="textarea1" class="materialize-textarea" name="mapClient">{{#if mapClient}}{{mapClient}}{{else}}Карта пока пустая{{/if}}</textarea>
+                    <div class="row">
+                    <button type="submit" class="col s12 m6 l4 btn btn-small">Изменить</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
     <input type="hidden" value="{{_id}}" name="id">
-    <button class="btn" id="newVisitBtn" onclick="openNewVisit()">Добавить новое посещение</button>
+    <div class="row">
+    <button class="btn col s12 m6 l4" id="newVisitBtn" onclick="openNewVisit()">Добавить новое посещение</button>
+    </div>
     <div id="newVisit">
         <form action="/addNewVisit" method="POST">
 
@@ -20,12 +55,17 @@
     <div><h5>Записи:</h5></div>
     {{#each visits}}
     <div class="todo">
-        <label>
-            <span >{{date}}</span>
-            <span >{{time}}</span>
-            <span >{{servise}}</span>
-            <input type="hidden" value="{{_id}}" name="id">
-        </label>
+        <form action="/editing" method="POST">
+            <div class="row visit">
+            <span class="col s8 m4 l2"><input type="date" name="date" value="{{date}}"></span>
+            <span class="col s4 m2 l2"><input type="time" name="time" value="{{time}}"></span>
+            <span class="col s12 m4 l6"><input type="text" name="servise" value="{{servise}}"></span>
+            <input type="hidden" value="{{id}}" name="id">
+            <input type="hidden" value="{{ind}}" name="ind">
+            <button type="submit" name="vote" value="changec" class=" col s12 m2 l2 btn btn-small">изменить</button>
+            <button type="submit" name="vote" value="deleted" class=" col s12 m2 l2 btn btn-small red darken-4">удалить</button>
+            </div>
+        </form>
     </div>
     {{/each}}
 {{/with}}

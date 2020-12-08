@@ -1,5 +1,5 @@
 <nav>
-  <div class="nav-wrapper">
+  <div class="nav-wrapper cyan darken-3">
     <a href="/" class="brand-logo hide-on-med-and-down">Система управления</a>
     <ul id="nav-mobile" class="right">
 
@@ -10,15 +10,15 @@
       {{/if}}
 
       {{#if isClients}}
-      <li class="active"><a href="/clients">Клиенты</a></li>
+      <li class="active"><a href="/clients">Пациеты</a></li>
       {{else}}
-      <li><a href="/clients">Клиенты</a></li>
+      <li><a href="/clients">Пацинты</a></li>
       {{/if}}
 
       {{#if isCreate}}
-      <li class="active"><a href="/create">Добавить клиента</a></li>
+      <li class="active"><a href="/create">Добавить пациента</a></li>
       {{else}}
-      <li><a href="/create">Добавить клиента</a></li>
+      <li><a href="/create">Добавить пациента</a></li>
       {{/if}}
 
     </ul>

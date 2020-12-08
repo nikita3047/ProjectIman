@@ -16,6 +16,19 @@
   padding: 1rem;
 }
 
+.visit{
+  background: #f3f3f3;
+  padding: 1rem;
+}
+
+.bigFont{
+  font-size:200%;
+}
+
+.srFont{
+  font-size:150%;
+}
+
 .todo i {
   z-index: 2;
 }
@@ -23,3 +36,16 @@
 #newVisit{
   display: none;
 }
+
+.timeVisit{
+  font-size: 200%;
+}
+
+button{
+  margin-top:5px;
+}
+
+label{
+  margin-top: 5px;
+}
+

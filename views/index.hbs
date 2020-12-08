@@ -8,14 +8,13 @@
     <form action="/thisclient" method="POST">
   
     <li class="todo">
-        <label>
-            <span >{{name}}</span>
-            <span >{{phone}}</span>
-            <span >{{time}}</span>
-            <span >{{servise}}</span>
+        <div class="row visit">
+            <span class="col s4 m2 bigFont">{{time}}</span>
+            <span class="col s8 m4 bigFont">{{name}}</span>
+            <span class="col s12 m4 srFont cent">{{servise}}</span>
             <input type="hidden" value="{{_id}}" name="id">
-            <button class = "btn btn-small" type="submit">Открыть</button>
-        </label>
+            <button class = "btn btn-small col s12 m2" type="submit">Открыть</button>
+        </div>
     </li>
   </li>
   {{/each}}

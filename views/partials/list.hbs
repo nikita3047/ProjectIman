@@ -1,0 +1,34 @@
+{{#if todos.length}}
+<ul id="listClient">
+  {{#each todos}}
+  <form action="/thisclient" method="POST">
+  
+    <li class="todo">
+      <div class="row visit">
+            <span class="col s6 m5 ">{{name}}</span>
+            <span class="col s6 m5 ">{{phone}}</span>
+            <input type="hidden" value="{{_id}}" name="id">
+            <button class = "btn btn-small col s12 m2" type="submit">Открыть</button>
+      </div>
+    </li>
+  </form>
+  {{/each}}
+</ul>
+{{/if}}
+{{#if clients.length}}
+<ul id="listClient">
+  {{#each clients}}
+  <form action="/thisclient" method="POST">
+  
+    <li class="todo">
+      <div class="row visit">
+            <span class="col s6 m5 ">{{name}}</span>
+            <span class="col s6 m5 ">{{phone}}</span>
+            <input type="hidden" value="{{_id}}" name="id">
+            <button class = "btn btn-small col s12 m2" type="submit">Открыть</button>
+      </div>
+    </li>
+  </form>
+  {{/each}}
+</ul>
+{{/if}}

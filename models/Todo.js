@@ -12,9 +12,21 @@ const schema = new Schema({
   visits:{
     type: Array
   },
-  completed: {
+  mapClient: {
+    type: String
+  },
+  ratingG:{
     type: Boolean,
-    default: false
+    default:true
+  },
+  
+  ratingB:{
+    type: Boolean,
+    default:false
+  },
+  ratingVB:{
+    type: Boolean,
+    default:false
   }
 })
 

@@ -1,11 +1,23 @@
 <form action="/create" method="POST">
-  <h2>Добавить клиента</h2>
-
-  <div class="input-field">
-    <input type="text" name="name" placeholder="Имя клиента">
-    <input type="text" name="phone" placeholder="Номер клиента">
-
+  <h2>Добавить Пациента</h2>
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12 m6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="icon_prefix" type="text" class="validate" name="name">
+          <label for="icon_prefix">Имя пациента</label>
+        </div>
+        <div class="input-field col s12 m6">
+          <i class="material-icons prefix">phone</i>
+          <input id="icon_telephone" type="tel" class="validate" name="phone">
+          <label for="icon_telephone">Номер пациента</label>
+        </div>
+      </div>
+      <div class="row">
+  <button type="submit" class="btn col s12 l4">Добавить</button>
   </div>
-
-  <button type="submit" class="btn">Добавить</button>
+    </form>
+  </div>
+  
 </form>

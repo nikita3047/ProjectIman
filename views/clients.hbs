@@ -1,22 +1,11 @@
 <h2>Клиенты</h2>
-
-{{#if todos.length}}
-<ul>
-  {{#each todos}}
-  <form action="/thisclient" method="POST">
+<form action="/inpName" id="inpNam" method="POST">
+<div class="input-field col s12">
   
-    <li class="todo">
-        <label>
-            <span>{{name}}</span>
-            <span>{{phone}}</span>
-
-            <input type="hidden" value="{{_id}}" name="id">
-            <button class = "btn btn-small" type="submit">Открыть</button>
-        </label>
-    </li>
-  </form>
-  {{/each}}
-</ul>
-{{else}}
-<p>Нет клиентов</p>
-{{/if}}
+          <i class="material-icons prefix">account_circle</i>
+          <input id="icon_prefix" type="text" class="validate inpName" name = "val" oninput="inpName(this.value)" value="{{val}}" autofocus>
+          <label for="icon_prefix">Имя пациента</label>
+          
+        </div>
+</form>
+{{> list}}
