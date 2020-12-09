@@ -29,7 +29,7 @@ router.get('/', async (req, res) => {
   })
 
   res.render('index', {
-    title: 'Записи',
+    title: 'Студия красоты и здоровья ИМАН',
     isIndex: true,
     visitsToday,
     strtoday
