@@ -2,6 +2,10 @@
   margin-bottom: 1rem;
 }
 
+.btn{
+  background-color: red lighten-3;
+}
+
 .todo span.completed {
   text-decoration: line-through;
 }
