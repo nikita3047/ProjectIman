@@ -1,8 +1,8 @@
 <h2>Пациент</h2>
 {{#with client}}
-    <div><h5>Имя: {{name}}</h5></div>
-    <div><h5>Телефон:{{phone}}</h5></div>
-     <form action="/rating" method="POST">
+    <form action="/editRatingAndMap" method="POST">
+    <div><h5>Имя:</h5><textarea class="materialize-textarea" name="name">{{name}}</textarea></div>
+    <div><h5>Телефон:</h5><textarea class="materialize-textarea" name="phone">{{phone}}</textarea></div>
       <div class="row">
           <input type="hidden" value="{{_id}}" name="id">
       <label class="col s4 m3">
@@ -17,12 +17,9 @@
         <input class="with-gap" name="rating" type="radio" value="3" {{#if ratingVB}}checked{{/if}}/>
         <span>Не явился</span>
       </label>
-      <button class="btn btn-small col s12 m3" type="submit">Изменить</button>
       </div>
-  </form>
     <div><h5>Карта пациента:</h5></h5></div>
     <div class="row">
-        <form class = "col s12" action="/mapClient" method="POST">
             <div class="row">
                 <div class="input-field col s12">
                 
@@ -33,8 +30,8 @@
                     </div>
                 </div>
             </div>
-        </form>
     </div>
+    </form>
     <input type="hidden" value="{{_id}}" name="id">
     <div class="row">
     <button class="btn col s12 m6 l4" id="newVisitBtn" onclick="openNewVisit()">Добавить новое посещение</button>

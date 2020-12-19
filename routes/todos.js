@@ -57,7 +57,7 @@ router.get('/create', (req, res) => {
 router.post('/create', async (req, res) => {
   const todo = new Todo({
     name: req.body.name,
-    phone: req.body.phone
+    phone: req.body.phone1
   })
 
   await todo.save()
@@ -133,23 +133,13 @@ router.post('/dateSwitch', async (req,res)=>{
   })
 })
 
-router.post('/mapClient', async (req, res) => {
-  const todo = await Todo.findById(req.body.id)
-  todo.mapClient=req.body.mapClient
-  await todo.save()
-  const client = await Todo.findById(req.body.id).lean()
-  let visits=client.visits
-  visits.reverse()
-  res.render('client',{
-    title:'Пациент',
-    client,
-    visits
-  })
-})
 
-router.post('/rating', async (req, res) => {
+router.post('/editRatingAndMap', async (req, res) => {
   const todo = await Todo.findById(req.body.id)
   let rating = req.body.rating
+  todo.mapClient=req.body.mapClient
+  todo.name=req.body.name
+  todo.phone=req.body.phone
   if(rating == 1){
     todo.ratingG=true;
     todo.ratingB=false;
@@ -175,6 +165,7 @@ router.post('/rating', async (req, res) => {
     visits
   })
 })
+
 
 router.post('/editing', async (req, res) => {
   var vote = req.body.vote

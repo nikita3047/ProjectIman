@@ -1,24 +1,24 @@
 <nav>
-  <div class="nav-wrapper cyan darken-3">
+  <div class="nav-wrapper red lighten-1">
     <a href="/" class="brand-logo hide-on-med-and-down">Система управления</a>
     <ul id="nav-mobile" class="right">
 
       {{#if isIndex}}
-      <li class="active"><a href="/">Записи</a></li>
+      <li class="active col s4"><a href="/">Записи</a></li>
       {{else}}
-      <li><a href="/">Записи</a></li>
+      <li class="col s4"><a href="/">Записи</a></li>
       {{/if}}
 
       {{#if isClients}}
-      <li class="active"><a href="/clients">Пациенты</a></li>
+      <li class="active col s4"><a href="/clients">Пациенты</a></li>
       {{else}}
-      <li><a href="/clients">Пациенты</a></li>
+      <li class="col s4"><a href="/clients">Пациенты</a></li>
       {{/if}}
 
       {{#if isCreate}}
-      <li class="active"><a href="/create">Добавить пациента</a></li>
+      <li class="active col s4"><a href="/create">Добавить пациента</a></li>
       {{else}}
-      <li><a href="/create">Добавить пациента</a></li>
+      <li class="col s4"><a href="/create">Добавить пациента</a></li>
       {{/if}}
 
     </ul>
