@@ -39,6 +39,15 @@ router.get('/', async (req, res) => {
 router.get('/clients', async (req, res) => {
   const todos = await Todo.find({}).lean()
   let val=''
+  todos.sort(function (a,b){
+    if (a.name > b.name) {
+      return 1;
+    }
+    if (a.name < b.name) {
+      return -1;
+    }
+    return 0;
+  })
   res.render('clients', {
     title: "Клиенты",
     isClients: true,
@@ -61,7 +70,16 @@ router.post('/create', async (req, res) => {
   })
 
   await todo.save()
-  res.redirect('/')
+  const client = await Todo.findById(todo.id).lean()
+  let visits=client.visits
+  visits.reverse()
+  console.log(client)
+
+  res.render('client',{
+    title:'Пациент',
+    client,
+    visits
+  })
 })
 
 router.post('/thisclient', async (req, res) => {
